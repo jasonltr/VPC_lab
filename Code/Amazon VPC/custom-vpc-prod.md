@@ -32,10 +32,10 @@ Name: MyIGW-PROD
 VPC: MyVPC-PROD
 
 # Account ID
-
+853749126015
 
 # VPC ID (Prod)
-
+vpc-0afc523bfa3872e48
 
 # Instance IP (Prod)
 

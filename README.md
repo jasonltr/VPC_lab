@@ -173,4 +173,50 @@ Done! Next exercise will test the setup
 
 - run `aws ec2 terminate-instances --instance-ids i-079f6ccd82c65ce2c`
 
-![](/images/terminate_instancepng)
+![](/images/terminate_instance.png)
+
+### Exercise 4 VPC peering
+- allows routing of traffic between VPCs using private IPv4 or IPv6 addresses, not via public internet
+- CIDR blocks cannot overlap (challenging as VPCs may be in different accounts, created at different times etc.)
+- the Private addresses of the instances will be used for the connection
+
+## 4.1 Set up vpc peering
+
+![](/images/peer_1.png)
+
+- this is what we will be creating in the lab
+- Create a new VPC, 4 subnets, route table and internet gateway as per the [custom-vpc-prod.md](/Code/Amazon%20VPC/custom-vpc-prod.md) file
+- Go VPC > Peering connections > Create peering connection
+
+![](/images/peer_2.png)
+- A peering request has been sent
+![](/images/peer_3.png)
+![](/images/peer_4.png)
+- Accept the request (imagine using two different accounts)
+
+- Create security group for PROD (VPC2)
+![](/images/peer_5.png)
+- the inbound rules allow connections from VPC1 with CIDR block 10.0.0.0/16
+
+- Now we launch an instance that uses this SG
+- Choose the correct VPC, subnet(public1a) and SG
+
+![](/images/peer_6.png)
+
+- Create security group for MGMT (VPC1)
+- the inbound rules allow connections from VPC2 with CIDR block 10.1.0.0/16
+![](/images/peer_7.png)
+
+- Ensure instances are set up for testing
+- Make sure to configure route table for public1a (VPC1) to (VPC2), and route table for public1a (VPC2) to (VPC1)
+- Make sure to switch public1a mgmt instance  to VPCPEER-MGMT security group
+- Make sure to swtich public1a prod instance to  VPCPEER-PROD security group
+
+![](/images/peer_8.png)
+
+- Now we try to ping public1A(VPC2) private IP from public1A(VPC1)
+
+![](/images/peer_9.png)
+![](/images/peer_10.png)
+
+- Success! VPC peering is set up for these two instances to interact with each other via private IP
