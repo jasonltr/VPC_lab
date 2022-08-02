@@ -21,7 +21,8 @@ Login to AWS console
 Go to VPC dashboard  
 Create VPC  
 Refer to custom-vpc.md to copy and paste the values into the forms  
-Created VPC, `Name: MyVPC IPv4 CIDR Block: 10.0.0.0/16`
+Created VPC, `Name: MyVPC IPv4 CIDR Block: 10.0.0.0/16`  
+
 ![](/images/vpc_cidr.png)
 
 Now to create Subnets, recall that subnets must have IPs within the original `IPv4 CIDR Block: 10.0.0.0/16`  
