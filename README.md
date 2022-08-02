@@ -117,5 +117,54 @@ Done! Next exercise will test the setup
 ![](/images/ec2_11.png)
 
 
+### Exercise 3 Set up Security Groups and Network Access Control List
 
+- Recall Security groups are at instance level
+- Security groups are stateful firewall, allows the return traffic automatically
+- Network ACL are stateless firewall, checks for an allow rule for both connections (both ways)
 
+![](/images/sg_best.png)
+- We will be trying to do this
+
+## 3.1 Test various SG configurations  
+- Go to EC2, 
+- Create new SG
+
+![](/images/sg_1.png)
+
+- This new SG will only allow inbound traffic from the public web service that we created
+- Now we need to assign it to our instance
+- EC2 -> Instances -> Private-1B -> Actions -> Security -> Change Security group -> Remove public web and add private-app
+
+![](/images/sg_2.png)
+
+- EC2 -> Security Groups -> Public-Web -> Edit inbound rules
+
+![](/images/sg_3.png)
+
+- Only my machine (IP) will be able to access the public web service now, we can test this using a vpn that masks your IP.
+
+- Change the inbound rule to any ipv4, as this is a webservice, we want anyone to be able to access it.
+
+![](/images/sg_5.png)
+
+- Go to instances and connect to public1A via ec2 instance connect, but this will fail
+- Go to public web security group, add inbound rule, type SSH port 22, any ipv4 address, save rule
+
+![](/images/sg_6.png)
+
+- Connect to public1A again
+- Get private IP of private1b
+- run `curl -s <private1bIP>`
+
+![](/images/sg_7.png)
+
+- the curl works, recall for SG, it is a staeful firewall, so the inbound rules set up are sufficient
+
+## 3.2 Test various NACL configurations 
+
+- go to vpc > network ACLs > MyVPC ACL > edit inbound rules > add rule numebr 99, type http, deny my own IP
+
+![](/images/sg_8.png)
+
+- now the site can't be reached
