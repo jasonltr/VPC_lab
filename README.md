@@ -168,3 +168,9 @@ Done! Next exercise will test the setup
 ![](/images/sg_8.png)
 
 - now the site can't be reached
+
+## 3.3 Delete public 1b
+
+- run `aws ec2 terminate-instances --instance-ids i-079f6ccd82c65ce2c`
+
+![](/images/terminate_instancepng)
