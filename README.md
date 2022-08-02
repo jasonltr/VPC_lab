@@ -25,31 +25,30 @@ This free account allows me to follow the video closely and create the resources
 ![](/images/vpc_cidr.png)
 
 - Now to create Subnets, recall that subnets must have IPs within the original `IPv4 CIDR Block: 10.0.0.0/16`  
-
-- VPC dashboard, left column  
-- Subnets -> Create subnet  
-- Enter the details and create all 4 subnets  
+- VPC dashboard, left column
+- Subnets -> Create subnet
+- Enter the details and create all 4 subnets
 
 ![](/images/vpc_create_subnet.png)
 
 - Select public subnets
-- Go to Actions, modify auto-assign IP settings to `Enable`  
+- Go to Actions, modify auto-assign IP settings to `Enable`
 
 ## 1.2 Route table
 - Create route table for private subnets
-- Left column, click route tables, create route tables with name and select your VPC  
-- Once done, go to subnet associations, select private1a and private 1b and save 
-- Rename the main route table to MAIN   
+- Left column, click route tables, create route tables with name and select your VPC
+- Once done, go to subnet associations, select private1a and private 1b and save
+- Rename the main route table to MAIN
 - Verify that the main route table does not have any subnet association but does have public1a and public1b listed
 
 ![](/images/vpc_route_table.png)
 ![](/images/vpc_route_table_2.png)
 
 ## 1.3 Internet gateways
-- Left column, click internet gateways  
-- Create internet gateway with the provided name  
+- Left column, click internet gateways
+- Create internet gateway with the provided name
 - Attach to VPC
-- Go to MAIN route table -> Routes -> Edit Routes -> Add route with the following  
+- Go to MAIN route table -> Routes -> Edit Routes -> Add route with the following
 
 ![](/images/vpc_route_table_3.png)
 
@@ -58,13 +57,13 @@ Done! Next exercise will test the setup
 ### Exercise 2 Launch instances and test VPC 
 
 ## 2.1 Create NAT gateway
-- Left column, NAT gateways, create NAT gateway with name MyNATGW, select public1a subnet, generate elastic IP and create  
-- go to route tables -> Private-RT -> Routes -> Edit route -> Add route, 0.0.0.0/0, select the created nat gateway  
+- Left column, NAT gateways, create NAT gateway with name MyNATGW, select public1a subnet, generate elastic IP and create
+- go to route tables -> Private-RT -> Routes -> Edit route -> Add route, 0.0.0.0/0, select the created nat gateway
 - now our private subnets will have access to the internet
 
 
 ## 2.2 Create security group
-- Left column, security groups, create security group  
+- Left column, security groups, create security group
 
 ![](/images/security_group.png)
 
