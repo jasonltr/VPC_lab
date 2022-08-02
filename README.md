@@ -220,3 +220,9 @@ Done! Next exercise will test the setup
 ![](/images/peer_10.png)
 
 - Success! VPC peering is set up for these two instances to interact with each other via private IP
+
+## Exercise 5 Create VPC endpoint
+
+- allows instances to connect to other services via private IP, using interface or gateway endpoints
+
+![](/images/endpoint_1.png)
