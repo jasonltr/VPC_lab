@@ -223,6 +223,44 @@ Done! Next exercise will test the setup
 
 ## Exercise 5 Create VPC endpoint
 
+### 5.1 create VPC endpoint, S3 bucket
 - allows instances to connect to other services via private IP, using interface or gateway endpoints
 
 ![](/images/endpoint_1.png)
+![](/images/endpoint_2.png)
+
+- VPC > endpoint > create endpoints
+
+![](/images/endpoint_3.png)
+
+- search s3, gateway, select VPC, select Main route table
+- leave policy as full access for now
+- go to route table to verify the endpoint is created and added
+
+![](/images/endpoint_4.png)
+
+- enter IAM in search bar, select IAM
+- create role > ec2 > type s3 into search bar > AmazonS3FullAccess > create role
+- EC2 > Public 1A mgmt > Actions > Security > Modify IAM role > select the role u just created and save
+- S3 > create bucket with unique name > create bucket
+- Upload some files into the S3
+- EC2 > public1A mgmt > connect via ec2 instance connect
+- we should be able to access s3 via public1A mgmt
+- after updating the endpoint policy to deny, we can see the same commands will return an access denied
+
+![](/images/endpoint_5.png)
+
+### 5.2 Bucket policy
+- this will prevent access from everywhere except the VPC endpoint 
+- S3 > go to our bucket > Permissions > bucket policy > edit > copy bucket arn > paste in [Bucket-Policy-VPCE.json](/Code/Amazon%20VPC/Bucket-Policy-VPCE.json)
+- copy and paste endpoint ID also
+
+![](/images/endpoint_6.png)
+
+- from my own terminal, able to use aws cli to see the bucket, but cannot access the files due to the updated s3 bucket policy
+
+![](/images/endpoint_7.png)
+
+- Funnily enough, the bucket poilcy actually locks us out, even from aws console. So enter the command to delete the s3 from public1a instance
+
+### End of VPC basics
