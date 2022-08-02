@@ -9,4 +9,13 @@ Using an existing subscription to acloudguru (ACG), I create a sandbox AWS envir
   
 This free account allows me to follow the video closely and create the resources.  
 
-![alttext](/images/Snipaste_2022-08-02_09-57-58.png)
+![acg_aws](/images/acg_aws.png)
+
+![acg_credentials](/images/acg_credentials.png)
+
+###  Exercise 1. Creating a VPC with subnets  
+
+
+
+Login to AWS console  
+Go to VPC dashboard  
