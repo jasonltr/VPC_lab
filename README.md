@@ -20,7 +20,7 @@ This free account allows me to follow the video closely and create the resources
 - Login to AWS console  
 - Go to VPC dashboard  
 - Create VPC  
-- Refer to [custom-vpc.md](/Code/Amazon VPC/custom-vpc.md) to copy and paste the values into the forms  
+- Refer to [custom-vpc.md](Code/Amazon VPC/custom-vpc.md) to copy and paste the values into the forms  
 - Created VPC, `Name: MyVPC IPv4 CIDR Block: 10.0.0.0/16`  
 
 ![](/images/vpc_cidr.png)
