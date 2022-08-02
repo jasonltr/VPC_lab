@@ -89,7 +89,7 @@ Done! Next exercise will test the setup
 ![](/images/ec2_4.png)
 ![](/images/ec2_5.png)
 
-- Nice, we are able to connect to our instaces within the VPC
+- Nice, we are able to connect to our instances within the VPC
 
 - Go to Instance dashboard, select Public-1A and click connect, use ec2 instance connect and click connect, let it run
 
