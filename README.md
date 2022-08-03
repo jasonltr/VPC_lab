@@ -1,3 +1,24 @@
+- [VPC_lab](#vpc_lab)
+  - [This readme will document my learning process of virtual private cloud (VPC) on AWS](#this-readme-will-document-my-learning-process-of-virtual-private-cloud-vpc-on-aws)
+  - [Exercise 1. Creating a VPC with subnets](#exercise-1-creating-a-vpc-with-subnets)
+    - [1.1 VPC, Subnets](#11-vpc-subnets)
+    - [1.2 Route table](#12-route-table)
+    - [1.3 Internet gateways](#13-internet-gateways)
+  - [Exercise 2 Launch instances and test VPC](#exercise-2-launch-instances-and-test-vpc)
+    - [2.1 Create NAT gateway](#21-create-nat-gateway)
+    - [2.2 Create security group](#22-create-security-group)
+    - [2.3 Run instances, populate aws_cli variables](#23-run-instances-populate-aws_cli-variables)
+  - [Exercise 3 Set up Security Groups and Network Access Control List](#exercise-3-set-up-security-groups-and-network-access-control-list)
+    - [3.1 Test various SG configurations](#31-test-various-sg-configurations)
+    - [3.2 Test various NACL configurations](#32-test-various-nacl-configurations)
+    - [3.3 Delete public 1b](#33-delete-public-1b)
+  - [Exercise 4 VPC peering](#exercise-4-vpc-peering)
+    - [4.1 Set up vpc peering](#41-set-up-vpc-peering)
+  - [Exercise 5 Create VPC endpoint](#exercise-5-create-vpc-endpoint)
+    - [5.1 create VPC endpoint, S3 bucket](#51-create-vpc-endpoint-s3-bucket)
+    - [5.2 Bucket policy](#52-bucket-policy)
+    - [End of VPC basics](#end-of-vpc-basics)
+
 # VPC_lab  
 ## This readme will document my learning process of virtual private cloud (VPC) on AWS  
 
